@@ -131,6 +131,54 @@ pnpm run dev
 cd ..
 pnpm run dev
    ```
+
+## 🧭 How to Contribute to this AgroDex?
+
+1. **Star ⭐ and Fork 🍴** this repository.  
+
+2. **Code Contributions:**  
+   - Create a new branch based on the type of change *(see [Branch & Commit Conventions](#-branch--commit-conventions))*  
+     ```bash
+     git checkout -b feature/new-section
+     ```
+   - Make your code adjustments.  
+   - Commit changes following the convention *(see [Branch & Commit Conventions](#-branch--commit-conventions))*.  
+   - Open a Pull Request (PR).
+  
+3. **Maintenance Contributions:**  
+   - Address issues like:
+     - Extracting embedded images or assets and adding them to `/assets/`.  
+     - Moving CSS/JS into separate files.  
+     - Updating README or file structure consistency.  
+   - Submit your PR under the “maintenance” label.
+
+---
+---
+
+# 🪶 Branch & Commit Conventions
+
+| Type              | Branch Prefix | Commit Prefix | Description                                 |
+| ----------------- | ------------- | ------------- | ------------------------------------------- |
+| New Feature     | `feature/`    | `feat:`       | Adding new functionality or pages           |
+| Bug Fix        | `fix/`        | `fix:`        | Resolving issues or broken behavior         |
+| Maintenance    | `chore/`      | `chore:`      | Config updates, repo organization           |
+| Documentation | `docs/`       | `docs:`       | Updating docs, README, or guides            |
+| UI/UX & Design | `uiux/`       | `design:`     | Design mockups, page revamps, visual tweaks |
+| Resources      | `resources/`  | `resource:`   | Adding educational content/resources        |
+| Refactor       | `refactor/`   | `refactor:`   | Code improvement without feature change     |
+| Style          | `style/`      | `style:`      | CSS fixes, spacing, or formatting changes   |
+
+Example: 
+```bash
+# Branch
+uiux/community-redesign
+
+# Commit
+design: revamp Community page layout for better clarity
+```
+
+---
+
 ## Roadmap
 
 - [v] Q4 2025 - Testnet Prototype
