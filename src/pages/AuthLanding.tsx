@@ -2,19 +2,21 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useWallet } from "@/hooks/useWallet";
 import { supabase } from "@/lib/supabaseClient";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, Mail, Lock } from "lucide-react";
-import WalletLogin from "@/components/WalletLogin";
+import WalletButton from "@/components/WalletButton";
 import { Helmet } from "react-helmet-async";
 import logoUrl from "@/assets/agritrust-logo.svg";
 
 export default function AuthLanding() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
+  const { isConnected } = useWallet();
   const [authError, setAuthError] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -23,10 +25,10 @@ export default function AuthLanding() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
   useEffect(() => {
-    if (!loading && user) {
+    if (!loading && (user || isConnected)) {
       navigate("/");
     }
-  }, [user, loading, navigate]);
+  }, [user, loading, isConnected, navigate]);
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -216,9 +218,9 @@ export default function AuthLanding() {
                             </span>
                           </div>
                         </div>
-                        <WalletLogin />
+                        <WalletButton />
                         <p className="mt-2 text-xs text-gray-500 text-center">
-                          Your identity stays secure — Hedera WalletConnect.
+                          Your identity stays secure — HashPack Wallet.
                         </p>
                       </div>
                     ) : (
