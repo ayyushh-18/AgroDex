@@ -3,18 +3,12 @@ import path from "path";
 import { defineConfig } from "vitest/config";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import componentTagger from "./plugins/component-tagger";
-// @ts-ignore
-import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   plugins: [
     react(),
     componentTagger(),
     nodePolyfills(),
-<<<<<<< HEAD
-    visualizer({ filename: "dist/stats.html" }),
-=======
->>>>>>> upstream/main
   ],
   resolve: {
     alias: {
