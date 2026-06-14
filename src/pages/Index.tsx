@@ -17,7 +17,6 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import logoUrl from "@/assets/agritrust-logo.svg";
-import { DEMO_VERIFY_URL } from "@/lib/demo";
 
 export default function Index() {
   return (
